@@ -8,6 +8,17 @@ description: >-
   specialty medications. The company was acquired by UnitedHealth Group's
   OptumRx, and operations have been integrated under that brand. No publicly
   documented developer APIs are offered under the Diplomat Pharmacy name.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
