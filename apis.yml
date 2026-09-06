@@ -41,14 +41,40 @@ tags:
   - Pharmaceuticals
   - Fortune 1000
 created: '2026-03-24'
-modified: '2026-04-28'
+modified: '2026-09-06'
 specificationVersion: '0.23'
 apis: []
 common:
+  - type: DomainSecurity
+    url: security/diplomat-pharmacy-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/diplomatrx
   - type: Website
-    url: https://www.diplomat-pharmacy.com
+    url: https://diplomatpharmacy.com
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-06'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Diplomat Pharmacy was absorbed into UnitedHealth Group's OptumRx in December 2019
+    and no longer serves a site of its own — diplomatpharmacy.com and diplomat.is both
+    answer every path, /.well-known/ included, with a blanket 301 into
+    specialty.optum.com, and the apis.yml Website host diplomat-pharmacy.com does not
+    resolve at all (NXDOMAIN).
+  evidence:
+    - url: https://diplomatpharmacy.com/
+      status: 301
+    - url: https://diplomatpharmacy.com/.well-known/security.txt
+      status: 301
+    - url: https://www.diplomat-pharmacy.com/
+      status: 0
+    - url: https://diplomatpharmacy.com/openapi.json
+      status: 301
+  checked: '2026-09-06'

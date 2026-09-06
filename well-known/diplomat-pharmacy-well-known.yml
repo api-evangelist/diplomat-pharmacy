@@ -1,0 +1,60 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  Direct HTTP probes of /.well-known/ paths on every host this record knows for
+  Diplomat Pharmacy. No pointer is emitted: not one path returned a 200 carrying a
+  real document. Every host answers with a blanket 301 into UnitedHealth/Optum's
+  specialty pharmacy site following the December 2019 OptumRx acquisition — the
+  redirect is a naive prefix rewrite (Location on /.well-known/security.txt is
+  literally "https://specialty.optum.com.well-known/security.txt"), which is
+  positive evidence of a catch-all rule rather than of any served document.
+note: >-
+  Recorded absence, not a served surface. Optum-hosted destinations were NOT probed
+  or credited here: they belong to UnitedHealth Group, a different company.
+hosts:
+  - host: diplomatpharmacy.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/openid-configuration
+        status: 301
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 301
+      - path: /.well-known/ai-plugin.json
+        status: 301
+      - path: /.well-known/agent-card.json
+        status: 301
+      - path: /.well-known/agent.json
+        status: 301
+  - host: www.diplomatpharmacy.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/openid-configuration
+        status: 301
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+      - path: /.well-known/api-catalog
+        status: 301
+      - path: /.well-known/ai-plugin.json
+        status: 301
+      - path: /.well-known/agent-card.json
+        status: 301
+      - path: /.well-known/agent.json
+        status: 301
+  - host: diplomat.is
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+      - path: /.well-known/agent-card.json
+        status: 301
+  - host: diplomat-pharmacy.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        note: >-
+          Host does not resolve — DNS returns NXDOMAIN. This was the Website pointer
+          carried in apis.yml until this pass; it has been corrected to the real
+          diplomatpharmacy.com domain.
